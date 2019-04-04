@@ -38,4 +38,4 @@ General Steps on a CentOS
 	
 6. Other target enumeration
 
-		CentOS:
+		x
