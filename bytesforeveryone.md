@@ -1,29 +1,25 @@
 # War Plans / Instructables
 
-General Steps
+General Steps on a CentOS
 
 1. Download required tools
 
-	CentOS:
-	Linux:
-	Windows:
+		Tools: wireshark-qt, net-tools 
+		sudo yum install <service>
 
-2. Change root, admin, and user password
+2. Change root, admin, and user password (add password to bashrc, etc)
 
-	CentOS:
-	Linux:
-	Windows:
+		Set new root password: sudo passwd <root> 
+		# root = user whose password is being changed; it will prompt for passwd after
 
 2. Update kernel
 
-	CentOS:
-	Linux:
-	Windows:
+		CentOS:
 
 3. Check running services, process and open ports
 
-	CentOS:
-	Linux:
-	Windows:
+		CentOS:
 	
 4. Other target enumeration
+
+		CentOS:
