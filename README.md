@@ -12,8 +12,12 @@ Members: kl3pt0m4n1ac, z3r0, THarm, rainman
     8 Step Business/Training Model:
       1. Caffeine
       2. Type
-      3. ? ? ?
-      4. Profit
+      3. More Caffeine
+      4. ? ? ?
+      5. More Caffeine
+      6. Code?
+      7. More Caffeine
+      8. Profit
 
 Do not share with anyone outside our team
 
