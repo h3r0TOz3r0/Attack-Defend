@@ -1,10 +1,16 @@
-#!/usr/bin/bash
-
 ############################################################################
+## Setup Script                                                           ##
+## Bash Script for CentOS                                                 ##
+##                                                                        ##
+## Author: Anna DeVries                                                   ##
+## 4 April 2019                                                           ##
+##                                                                        ##
 ## Instructions for Moving Script from OPS to Remote                      ##
 ## scp <src> <dst>                                                        ##
 ## scp centos-setup.sh bytesforeveryone@10.15.0.56:/home/bytesforeveryone ##
 ############################################################################
+
+#!/usr/bin/bash
 
 ## Update Box
 yum check-update
