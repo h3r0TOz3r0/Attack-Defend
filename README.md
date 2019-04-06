@@ -2,6 +2,8 @@
 
 Attack/Defend Playbook
 
+Members: kl3pt0m4n1ac, z3r0, THarm, rainman
+
     Motto: We aren't great but they're worse
     Slogan: Turning caffeine into code
     Goal: Beat WP Black Team
