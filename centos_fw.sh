@@ -61,6 +61,3 @@ done
 
 ## Save iptable rules to be persistent
 iptables-save > /etc/iptables/rules.v4
-
-## Log Traffic
-echo "Watch live logging 'tail -f /var/log/messages'" 
