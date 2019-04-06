@@ -59,3 +59,13 @@ done
 /sbin/iptables -P INPUT DROP
 /sbin/iptables -P FORWARD DROP
 /sbin/iptables -P OUTPUT ACCEPT
+
+## Save iptable rules to be persistent
+iptables-save > /etc/iptables/rules.v4
+
+## Log Traffic
+iptables -I FORWARD 1 -j LOG
+iptables -I OUTPUT 1 -j LOG
+iptables -I INPUT 1 -j LOG
+echo ""
+echo "Watch live logging 'tail -f /var/log/messages'" 
