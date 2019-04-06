@@ -61,7 +61,5 @@ General Steps on a CentOS
 7. Secure Email Server
 
 		#SMTP authentication? (Don't know if applicable to competition or what it is)
-		
 		#Encrypt ingoing/outgoing mail
-		
 		#Watch out for known metasploit exploits on popular linux email servers like zembra
