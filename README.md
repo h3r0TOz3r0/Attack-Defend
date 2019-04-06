@@ -1,6 +1,6 @@
-# Team: tankers
+# Attack/Defend Playbook
 
-Attack/Defend Playbook
+Team Gold aka Tankers
 
 Members: kl3pt0m4n1ac, z3r0, THarm, rainman
 
