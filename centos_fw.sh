@@ -36,14 +36,7 @@ echo "run 'sudo netstat -pant' to see services"
 /sbin/iptables -A INPUT -i lo -j ACCEPT					# allows traffic in local interface
 /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows handshake traffic
 /sbin/iptables -A INPUT -d $IP_ADDR -p tcp --dport 22 -j ACCEPT		# allows SSH traffic
-
-## Allow ICMP traffic
-interface="$(ip route | grep default | awk '{print $5}')"
-network="$(ip addr | grep enp1s0 | awk 'FNR==2{print $2}')"
-/sbin/iptables -A OUTPUT -s "$network" -p icmp --icmp-type 0 -j ACCEPT	# allows echo reply response
-/sbin/iptables -A OUTPUT -s "$network" -p icmp --icmp-type 8 -j ACCEPT	# allows echo request
-
-echo ""
+/sbin/iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows handshake traffic
 
 ## Allow Specified Ports
 if [ ! -x "($arg)" ]; then
@@ -53,19 +46,16 @@ fi
 for arg in "$@"
 do
 	/sbin/iptables -A INPUT -d $IP_ADDR -p tcp --dport $arg -j ACCEPT
+	/sbin/iptables -A OUTPUT -d $IP_ADDR -p tcp --sport $arg -j ACCEPT
 done
 
 ## Otherwise, drop all traffic (except output traffic)
 /sbin/iptables -P INPUT DROP
 /sbin/iptables -P FORWARD DROP
-/sbin/iptables -P OUTPUT ACCEPT
+/sbin/iptables -P OUTPUT DROP
 
 ## Save iptable rules to be persistent
 iptables-save > /etc/iptables/rules.v4
 
 ## Log Traffic
-iptables -I FORWARD 1 -j LOG
-iptables -I OUTPUT 1 -j LOG
-iptables -I INPUT 1 -j LOG
-echo ""
 echo "Watch live logging 'tail -f /var/log/messages'" 
