@@ -2,7 +2,13 @@
 
 General Steps on a CentOS
 
-1. Change root, admin, and user password (add password to bashrc, etc)
+1. Target enumeration
+
+		# Discover potential attack vectors in a system
+		# RUN FIRST! 
+		./centos_targetenum.sh
+
+2. Change root, admin, and user password (add password to bashrc, etc)
 
 		# Randomly assign workable IP Address to box
 		sudo dhclient <ethernet_name(ens33,eth0,etc)>
@@ -23,12 +29,12 @@ General Steps on a CentOS
 		# Change user to be sudoer
 		sudo usermod -aG wheel <user_name>
 
-4. Run centos_setup.sh
+3. Run centos_setup.sh
 
 		scp <src> <dst>
 		scp centos_setup.sh tankers@<ip_addr>:/home/tankers
 
-5. Check running services, process and open ports
+4. Check running services, process and open ports
 
 		# Check out services
 		netstat -pan (checks TCP and UDP; confirm port numbers)
@@ -41,18 +47,18 @@ General Steps on a CentOS
 		# Run firewall script: sudo ./centos_fw.sh <port_number>
 		./centos_fw.sh
 		
-6. Other target enumeration
+5. Other target enumeration
 
 		# Discover potential attack vectors in a system
 		./centos_targetenum.sh
 		
-7. Secure DNS Server
+6. Secure DNS Server
 
 		# Make sure DNS Recursion is disabled
 		# Restrict zone transfers??? (Might not be against rules of competition)
 		# Configure firewall to detect and block DNS tunneling
 
-8. Secure Email Server
+7. Secure Email Server
 
 		#SMTP authentication? (Don't know if applicable to competition or what it is)
 		
