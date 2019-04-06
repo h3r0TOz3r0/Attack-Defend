@@ -45,6 +45,11 @@ if [ ! -x "($arg)" ]; then
 fi
 for arg in "$@"
 do
+	if [ $arg -eq "53" ]; then
+		echo "Adding UDP and TCP at Port 53"
+		/sbin/iptables -A INPUT -d $IP_ADDR -p udp --dport $arg -j ACCEPT
+		/sbin/iptables -A OUTPUT -d $IP_ADDR -p udp --sport $arg -j ACCEPT
+	fi
 	/sbin/iptables -A INPUT -d $IP_ADDR -p tcp --dport $arg -j ACCEPT
 	/sbin/iptables -A OUTPUT -d $IP_ADDR -p tcp --sport $arg -j ACCEPT
 done
