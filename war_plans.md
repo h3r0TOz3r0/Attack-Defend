@@ -53,3 +53,6 @@ General Steps on a CentOS
 		# Configure firewall to detect and block DNS tunneling
 
 8. Secure Email Server
+		#SMTP authentication? (Don't know if applicable to competition or what it is)
+		
+		#
