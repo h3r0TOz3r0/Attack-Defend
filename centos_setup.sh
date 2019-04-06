@@ -12,7 +12,7 @@ yum upgrade
 yum clean all
 
 ## Download required tools
-yum install nano lsof tcpdump iptables 
+yum install nano lsof tcpdump iptables net-tools
 
 ## Update Kernel
 uname -r
