@@ -43,14 +43,13 @@ General Steps on a CentOS
 		
 6. Other target enumeration
 
-		x
+		# Discover potential attack vectors in a system
+		./centos_targetenum.sh
 		
 7. Secure DNS Server
 
-	#Make sure DNS Recursion is disabled
-	
-	#Restrict zone transfers??? (Might not be against rules of competition)
-	
-	#Configure firewall to detect and block DNS tunneling
+		# Make sure DNS Recursion is disabled
+		# Restrict zone transfers??? (Might not be against rules of competition)
+		# Configure firewall to detect and block DNS tunneling
 
 8. Secure Email Server
