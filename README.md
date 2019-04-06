@@ -21,7 +21,9 @@ To Do List:
 
 - [ ] War-Plans (list of tasks to perform)
 
-- [ ] Set-Up Script (update box, install dependencies/tools, update kernel)
+- [ ] Enumeration Script
+
+- [x] Set-Up Script (update box, install dependencies/tools, update kernel)
 
 - [ ] DNS Server Script
 
