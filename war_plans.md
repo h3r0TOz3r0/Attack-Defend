@@ -47,3 +47,4 @@ General Steps on a CentOS
 7. Secure DNS Server
 
 	#Make sure DNS Recursion is disabled
+	#Restrict zone transfers??? (Might not be against rules of competition)
