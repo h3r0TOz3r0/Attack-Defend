@@ -31,7 +31,7 @@ General Steps on a CentOS
 5. Check running services, process and open ports
 
 		# Check out services
-		netstat -pant
+		netstat -pan (checks TCP and UDP; confirm port numbers)
 		# Ports: 
 			# web server 172.16.*.2 (port 80) // could include 443
 			# file share server 172.16.*.4 (port 139 and 445)
@@ -44,6 +44,7 @@ General Steps on a CentOS
 6. Other target enumeration
 
 		x
+		
 7. Secure DNS Server
 
 	#Make sure DNS Recursion is disabled
