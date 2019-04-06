@@ -45,4 +45,5 @@ General Steps on a CentOS
 
 		x
 7. Secure DNS Server
+
 	#Make sure DNS Recursion is disabled
