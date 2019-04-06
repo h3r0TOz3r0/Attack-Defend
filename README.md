@@ -16,3 +16,21 @@ Members: kl3pt0m4n1ac, z3r0, THarm, rainman
       4. Profit
 
 Do not share with anyone outside our team
+
+To Do List:
+
+[ ] War-Plans (list of tasks to perform)
+
+[ ] Set-Up Script (update box, install dependencies/tools, update kernel)
+
+[ ] DNS Server Script
+
+[ ] Web Server Script
+
+[ ] Fire Share Server Script
+
+[ ] Email Server Script
+
+[ ] Databse Management System Server Script
+
+[ ] Offense 
