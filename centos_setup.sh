@@ -17,8 +17,8 @@ yum check-update
 yum upgrade
 yum clean all
 
-## Download required tools
-yum install neovim lsof tcpdump iptables net-tools
+## Download required tools plus nano for skiddies
+yum install nano lsof tcpdump iptables net-tools
 
 ## Update Kernel
 uname -r
