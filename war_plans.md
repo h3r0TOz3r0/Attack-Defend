@@ -52,3 +52,5 @@ General Steps on a CentOS
 	#Restrict zone transfers??? (Might not be against rules of competition)
 	
 	#Configure firewall to detect and block DNS tunneling
+
+8. Secure Email Server
