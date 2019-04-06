@@ -44,3 +44,5 @@ General Steps on a CentOS
 6. Other target enumeration
 
 		x
+7. Secure DNS Server
+	#Make sure DNS Recursion is disabled
