@@ -86,6 +86,8 @@ General Steps on a CentOS
 		#Enable security Controls
 		
 10 Securing Web Server
+
+		#Look into apachetop command tool for monitoring web server
 		
 		#Make sure SELinux is set to enforcer
 		
