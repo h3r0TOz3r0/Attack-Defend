@@ -63,47 +63,29 @@ General Steps on a CentOS
 7. Secure File Server
 
 		#Disable anonymous use or, if anonymous use required, ensure they don't have unauthorized access
-		
 		#If Samba (likely), make sure version is greater than 4.6.4
-		
 		#Make sure default keys are not used
-		
 		#Settings found in /etc/samba/smb.conf
-		
 		#Look at potentially using stunnel https://wiki.netbsd.org/tutorials/how_to_secure_samba_with_stunnel/
 		
 8. Securing Database Management System
 
 		#Use web application firewall
-		
 		#Encrypt stored files (might not be applicable given competition)
-		
 		#Enable security Controls
 		
 9. Securing Web Server
 
 		#Look into apachetop command tool for monitoring web server
-		
 		#Make sure SELinux is set to enforcer
-		
 		#If Appache web server, disable trace http request
-		
 		#make sure it's not running under root user
-		
 		#Disable signature (hide which version of appache is running)
-		
 		#Disable Banner
-		
 		#Use TLS over SSL
-		
 		#Disable directory listings
-		
 		#make sure users cannot create own directories
-		
 		#Examine CGI scripts (how others interact with web server)
-		
 		-Consider CGI Scripts as separate from server and another thing to examine and secure
-		
 			i. limit allowable characters
-		
 		#Upgrade to latest version of appache
