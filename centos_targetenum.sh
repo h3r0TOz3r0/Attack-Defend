@@ -9,7 +9,7 @@
 
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]
+if [ whoami != root ]
   then echo "Run again as root 'sudo ./centos_targetenum.sh'"
   exit
 fi
