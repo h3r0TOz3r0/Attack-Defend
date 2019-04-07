@@ -32,6 +32,7 @@ echo ""
 
 ## Allowed Input Traffic
 echo "run 'sudo netstat -pant' to see services"
+# 'sudo ss -s' might work better than nestat, might not come default on system though
 /sbin/iptables -A INPUT -i lo -j ACCEPT					# allows traffic in local interface
 /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows handshake traffic
 /sbin/iptables -A INPUT -d $IP_ADDR -p tcp --dport 22 -j ACCEPT		# allows SSH traffic
