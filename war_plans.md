@@ -47,25 +47,20 @@ General Steps on a CentOS
 		# Run firewall script: sudo ./centos_fw.sh <port_number>
 		./centos_fw.sh
 		
-5. Other target enumeration
-
-		# Discover potential attack vectors in a system
-		./centos_targetenum.sh
-		
-6. Secure DNS Server
+5. Secure DNS Server
 
 		# Make sure DNS Recursion is disabled
 		# Restrict zone transfers??? (Might not be against rules of competition)
 		# Configure firewall to detect and block DNS tunneling
 
-7. Secure Email Server
+6. Secure Email Server
 
 		#SMTP authentication? (Don't know if applicable to competition or what it is)
 		#Encrypt ingoing/outgoing mail
 		#Watch out for known metasploit exploits on popular linux email servers like zembra
 		#Look at sendmail (default for centOS mail servers)
 		
-8. Secure File Server
+7. Secure File Server
 
 		#Disable anonymous use or, if anonymous use required, ensure they don't have unauthorized access
 		
@@ -77,7 +72,7 @@ General Steps on a CentOS
 		
 		#Look at potentially using stunnel https://wiki.netbsd.org/tutorials/how_to_secure_samba_with_stunnel/
 		
-9. Securing Database Management System
+8. Securing Database Management System
 
 		#Use web application firewall
 		
@@ -85,7 +80,7 @@ General Steps on a CentOS
 		
 		#Enable security Controls
 		
-10 Securing Web Server
+9. Securing Web Server
 
 		#Look into apachetop command tool for monitoring web server
 		
