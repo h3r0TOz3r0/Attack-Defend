@@ -2,7 +2,7 @@
 
 Team Gold aka Tankers
 
-Members: kl3pt0m4n1ac, THarm, rainman
+Members: kl3pt0m4n1ac, z3r0, THarm, rainman
 
     Motto: We aren't great but they're worse
     Slogan: Turning caffeine into code
@@ -23,7 +23,7 @@ Do not share with anyone outside our team
 
 Core Team Values:
 
-    1. All team members firmly believe Alex Heldstab is a skiddie.
+    1. All team members firmly believe Alex Heldstab is a skiddie and that Will will break his Box so that we don't have to.
     
     2. All team members believe windows95 was the greatest OS of all time.
     
