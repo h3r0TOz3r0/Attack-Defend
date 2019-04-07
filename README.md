@@ -2,7 +2,7 @@
 
 Team Gold aka Tankers
 
-Members: kl3pt0m4n1ac, z3r0, THarm, rainman
+Members: kl3pt0m4n1ac, THarm, rainman
 
     Motto: We aren't great but they're worse
     Slogan: Turning caffeine into code
