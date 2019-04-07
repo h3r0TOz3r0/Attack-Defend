@@ -18,8 +18,9 @@ echo -n "Which service is this box running?: "
 read ans
 echo $ans
 
-RESULTFILE="/home/${ans}_centos_results.txt"
+RESULTFILE="/home/${ans}_centos_attack_vector.txt"
 
+# all users
 echo "========================= SYSINFO =========================" > `echo $RESULTFILE` 2>&1
 logginuser=`who | awk '{print $1;}'` >> `echo $RESULTFILE` 2>&1
 ipaddr=`hostname -i`  >> `echo $RESULTFILE` 2>&1
