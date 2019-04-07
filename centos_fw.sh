@@ -11,8 +11,6 @@
 IP_ADDR=`hostname -I`
 echo "Your IP Address is "$IP_ADDR
 echo "" 
-echo "WARNING!!!!! This script is vulnerable to reverse shells"
-echo ""
 
 echo "Checking dependencies..."
 if [ ! -x "$(command -v iptables)" ]; then
@@ -31,8 +29,7 @@ echo ""
 /sbin/iptables -P FORWARD ACCEPT
 
 ## Allowed Input Traffic
-echo "run 'sudo netstat -pant' to see services"
-# 'sudo ss -s' might work better than nestat, might not come default on system though
+echo "run 'sudo netstat -pant' or 'sudo ss -s' to see services"
 /sbin/iptables -A INPUT -i lo -j ACCEPT					# allows traffic in local interface
 /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows handshake traffic
 /sbin/iptables -A INPUT -d $IP_ADDR -p tcp --dport 22 -j ACCEPT		# allows SSH traffic
