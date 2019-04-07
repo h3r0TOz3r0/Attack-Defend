@@ -104,6 +104,9 @@ General Steps on a CentOS
 		#make sure users cannot create own directories
 		
 		#Examine CGI scripts (how others interact with web server)
+		
 		-Consider CGI Scripts as separate from server and another thing to examine and secure
+		
+			i. limit allowable characters
 		
 		#Upgrade to latest version of appache
