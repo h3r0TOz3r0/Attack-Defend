@@ -1,10 +1,10 @@
-######################################################
-## Firewall Script                                  ##
-## Bash Script for CentOS                           ##
-##                                                  ##
-## Author: Anna DeVries                             ##
-## 5 April 2019                                     ##
-######################################################
+#####################################################################
+## Firewall Script                                  		   ##
+## Bash Script for CentOS                           		   ##
+##                                                  		   ##
+## Author: Mainly John Eberling with slight help from Anna DeVries ##
+## 5 April 2019                                     		   ##
+#####################################################################
 
 #!/usr/bin/bash
 
