@@ -101,4 +101,8 @@ General Steps on a CentOS
 		
 		#Disable directory listings
 		
+		#make sure users cannot create own directories
+		
+		#Examine CGI scripts (how others interact with web server)
+		
 		#Upgrade to latest version of appache
