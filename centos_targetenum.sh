@@ -1,6 +1,6 @@
 ############################################################################
 ## Target Enumeration Script                                              ##
-## Bash Script                                                            ##
+## Bash Script for CentOS                                                 ##
 ##                                                                        ##
 ## 6 April 2019                                                           ##
 ##                                                                        ##
