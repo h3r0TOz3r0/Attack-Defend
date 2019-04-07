@@ -31,7 +31,7 @@ Core Team Values:
     
     4. All team members will abstain from using Kali Linux.
     
-    5. All team members will not kick dogs.
+    5. All team members will not kick dogs under the age of 6.
     
     6. All team members will love all cats.
     
