@@ -66,7 +66,9 @@ General Steps on a CentOS
 		#Look at sendmail (default for centOS mail servers)
 		
 8. Secure File Server
-		#Disable anonymous use or, if anonymous use required, ensure they don't have unauthorized access
+		#Disable anonymous use or, if anonymous use required, ensure they don't have unauthorized access\a
 		#If Samba (likely), make sure version is greater than 4.6.4
+		
 		#Make sure default keys are not used
+		
 		#Look at potentially using stunnel https://wiki.netbsd.org/tutorials/how_to_secure_samba_with_stunnel/
