@@ -28,12 +28,12 @@ echo ""
 /sbin/iptables -P OUTPUT ACCEPT
 /sbin/iptables -P FORWARD ACCEPT
 
-## Allowed Input Traffic
+## Allowed Traffic
 echo "run 'sudo netstat -pant' or 'sudo ss -s' to see services"
 /sbin/iptables -A INPUT -i lo -j ACCEPT					# allows traffic in local interface
-/sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows handshake traffic
+/sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows input handshake traffic
 /sbin/iptables -A INPUT -d $IP_ADDR -p tcp --dport 22 -j ACCEPT		# allows SSH traffic
-/sbin/iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows handshake traffic
+/sbin/iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows output handshake traffic
 
 ## Allow Specified Ports
 if [ ! -x "($arg)" ]; then
