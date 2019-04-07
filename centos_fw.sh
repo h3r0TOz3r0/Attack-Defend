@@ -2,7 +2,7 @@
 ## Firewall Script                                  		   ##
 ## Bash Script for CentOS                           		   ##
 ##                                                  		   ##
-## Author: Mainly John Eberling with slight help from Anna DeVries ##
+## Author: Tanker DeVries 					   ##
 ## 5 April 2019                                     		   ##
 #####################################################################
 
