@@ -29,7 +29,7 @@ Core Team Values:
     
     3. All team members will not hack anything running gentoo.
     
-    4. All team members will abstain from using Kali Linux.
+    4. All team members will abstain from using Kali Linux. (THIS INCLUDES YOU ANNA)
     
     5. All team members will not kick dogs under the age of 6.
     
