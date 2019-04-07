@@ -22,6 +22,7 @@ Members: kl3pt0m4n1ac, z3r0, THarm, rainman
 Do not share with anyone outside our team
 
 Core Team Values:
+
     1. All team members firmly believe Alex Heldstab is a skiddie.
     
     2. All team members believe windows95 was the greatest OS of all time.
