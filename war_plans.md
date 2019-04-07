@@ -73,6 +73,8 @@ General Steps on a CentOS
 		
 		#Make sure default keys are not used
 		
+		#Settings found in /etc/samba/smb.conf
+		
 		#Look at potentially using stunnel https://wiki.netbsd.org/tutorials/how_to_secure_samba_with_stunnel/
 		
 9. Securing Database Management System
