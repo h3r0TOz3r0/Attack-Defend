@@ -59,4 +59,4 @@ To Do List:
 
 - [ ] Flag Submitter
 
-- [ ] Offense 
+- [ ] Offense (thrower-every three minutes, takes a vulnerability and exploits it on all boxes)
