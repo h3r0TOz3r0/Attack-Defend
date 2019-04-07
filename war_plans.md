@@ -6,7 +6,7 @@ General Steps on a CentOS
 
 		# Discover potential attack vectors in a system
 		# RUN FIRST! 
-		./targetenum.sh
+		./centos_targetenum.sh
 
 2. Change root, admin, and user password (add password to bashrc, etc)
 
