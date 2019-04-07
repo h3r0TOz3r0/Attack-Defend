@@ -10,22 +10,21 @@
 #!/bin/bash
 
 if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+  then echo "Run again as root 'sudo ./centos_targetenum.sh'"
   exit
 fi
 
-echo "If this fails attempt to run like:"
-echo "sudo bash ./survey.sh"
-echo "======================"
+echo -n "Which service is this box running?: "
+read ans
+echo $ans
 
-logginuser=`who | awk '{print $1;}'`
-ipaddr=`hostname -i`
-osname=`cat /etc/os-release | head -n 1 | grep -o '".*"'| sed 's/"//g' | awk '{print $1;}'`
-osver=`cat /etc/os-release | grep VERSION_ID | grep -o '".*"'| sed 's/"//g' | awk '{print $1;}'`
-RESULTFILE="/tmp/${osname}_${osver}_results.txt"
-
+RESULTFILE="/home/${ans}_centos_results.txt"
 
 echo "========================= SYSINFO =========================" > `echo $RESULTFILE` 2>&1
+logginuser=`who | awk '{print $1;}'` >> `echo $RESULTFILE` 2>&1
+ipaddr=`hostname -i`  >> `echo $RESULTFILE` 2>&1
+osname=`cat /etc/os-release | head -n 1 | grep -o '".*"'| sed 's/"//g' | awk '{print $1;}'`  >> `echo $RESULTFILE` 2>&1
+osver=`cat /etc/os-release | grep VERSION_ID | grep -o '".*"'| sed 's/"//g' | awk '{print $1;}'`  >> `echo $RESULTFILE` 2>&1
 uname -a >> `echo $RESULTFILE` 2>&1
 echo "-------------- OS INFO  --------------" >> `echo $RESULTFILE` 2>&1
 cat /etc/os-release >> `echo $RESULTFILE` 2>&1
