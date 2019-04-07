@@ -74,3 +74,29 @@ General Steps on a CentOS
 		#Make sure default keys are not used
 		
 		#Look at potentially using stunnel https://wiki.netbsd.org/tutorials/how_to_secure_samba_with_stunnel/
+		
+9. Securing Database Management System
+
+		#Use web application firewall
+		
+		#Encrypt stored files (might not be applicable given competition)
+		
+		#Enable security Controls
+		
+10 Securing Web Server
+		
+		#Make sure SELinux is set to enforcer
+		
+		#If Appache web server, disable trace http request
+		
+		#make sure it's not running under root user
+		
+		#Disable signature (hide which version of appache is running)
+		
+		#Disable Banner
+		
+		#Use TLS over SSL
+		
+		#Disable directory listings
+		
+		#Upgrade to latest version of appache
