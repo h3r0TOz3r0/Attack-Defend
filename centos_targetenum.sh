@@ -5,7 +5,7 @@
 ## Author: Anna DeVries                                                   ##
 ## 6 April 2019                                                           ##
 ##                                                                        ##
-## ./centos_targetenum.sh                                                 ##
+## sudo ./centos_targetenum.sh                                            ##
 ############################################################################
 
 #!/bin/bash
@@ -20,7 +20,7 @@ read ans
 echo $ans
 
 echo "Target Enumeration Text File" > ${ans}_centos_attack_vector.txt
-echo " " >> ${ans}_centos_attack_vector.txt
+echo " " >> ${ans}_centos.txt
 
 echo "--------------------System Information--------------------" >> ${ans}_centos_attack_vector.txt
 cat /etc/centos-release >> ${ans}_centos_attack_vector.txt
@@ -58,3 +58,4 @@ sudo firewall-cmd --zone=public --list-all >> ${ans}_centos_attack_vector.txt
 echo " " >> ${ans}_centos_attack_vector.txt
 
 echo "Target Enumeration Complete"
+echo "Please move this off the box and share in Slack. scp <filename> <dst@ip>:"
