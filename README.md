@@ -24,19 +24,12 @@ Do not share with anyone outside our team
 Core Team Values:
 
     1. All team members firmly believe that Will will break his own team's box.
-    
     2. All team members believe windows95 was the greatest OS of all time.
-    
     3. All team members will not hack anything running gentoo.
-    
     4. All team members will abstain from using Kali Linux. (THIS INCLUDES YOU ANNA)
-    
     5. All team members will not kick dogs under the age of 6.
-    
     6. All team members will love all cats.
-    
     7. All team members will branch Armor.
-    
     8. All team members will smile, constantly!
 
 To Do List:
