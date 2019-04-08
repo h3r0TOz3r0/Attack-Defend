@@ -36,7 +36,7 @@ To Do List:
 
 - [ ] War-Plans (list of tasks to perform)
 
-- [ ] Enumeration Script
+- [x] Enumeration Script
 
 - [x] Set-Up Script (update box, install dependencies/tools, update kernel)
 
