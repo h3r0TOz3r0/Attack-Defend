@@ -9,7 +9,7 @@
 
 #!/bin/bash
 
-if [ whoami != root ]
+if [ "$EUID" -ne 0 ]
   then echo "Run again as root 'sudo ./centos_targetenum.sh'"
   exit
 fi
@@ -18,32 +18,33 @@ echo -n "Which service is this box running?: "
 read ans
 echo $ans
 
-RESULTFILE="/home/${ans}_centos_attack_vector.txt"
+echo "Target Enumeration Text File" > ${ans}_centos_attack_vector.txt
+echo " " >> ${ans}_centos_attack_vector.txt
 
-# all users
-echo "========================= SYSINFO =========================" > `echo $RESULTFILE` 2>&1
-logginuser=`who | awk '{print $1;}'` >> `echo $RESULTFILE` 2>&1
-ipaddr=`hostname -i`  >> `echo $RESULTFILE` 2>&1
-osname=`cat /etc/os-release | head -n 1 | grep -o '".*"'| sed 's/"//g' | awk '{print $1;}'`  >> `echo $RESULTFILE` 2>&1
-osver=`cat /etc/os-release | grep VERSION_ID | grep -o '".*"'| sed 's/"//g' | awk '{print $1;}'`  >> `echo $RESULTFILE` 2>&1
-uname -a >> `echo $RESULTFILE` 2>&1
-echo "-------------- OS INFO  --------------" >> `echo $RESULTFILE` 2>&1
-cat /etc/os-release >> `echo $RESULTFILE` 2>&1
-echo "-------------- HARDWARE --------------" >> `echo $RESULTFILE` 2>&1
-lshw -short >> `echo $RESULTFILE` 2>&1
-echo "======================== DISK INFO ========================" >> `echo $RESULTFILE` 2>&1
-df -h >> `echo $RESULTFILE` 2>&1
-echo "==================== USER INFORMATION =====================" >> `echo $RESULTFILE` 2>&1
-echo "-------------- PASSWD --------------" >> `echo $RESULTFILE` 2>&1
-cat /etc/passwd >> `echo $RESULTFILE` 2>&1
-echo "-------------- SHADOW --------------" >> `echo $RESULTFILE` 2>&1
-cat /etc/shadow >> `echo $RESULTFILE` 2>&1
-echo "-------------- GROUPS --------------" >> `echo $RESULTFILE` 2>&1
-cat /etc/group >> `echo $RESULTFILE` 2>&1
-echo "-------------- USERS  --------------" >> `echo $RESULTFILE` 2>&1
-awk -F: '{ print $1}' /etc/passwd >> `echo $RESULTFILE` 2>&1
-echo "------------- USER DIR -------------" >> `echo $RESULTFILE` 2>&1
-ls -lisa /home >> `echo $RESULTFILE` 2>&1
+echo "-----System Information-----" >> ${ans}_centos_attack_vector.txt
+cat /etc/centos-release >> ${ans}_centos_attack_vector.txt
+echo "IP Address: " >> ${ans}_centos_attack_vector.txt
+ip addr | grep "inet " >> ${ans}_centos_attack_vector.txt
+echo "Kernel Information: " >> ${ans}_centos_attack_vector.txt
+uname -a >> ${ans}_centos_attack_vector.txt
+echo " " >> ${ans}_centos_attack_vector.txt
+
+echo "-----User/Root Privs Information-----" >> ${ans}_centos_attack_vector.txt
+echo "Password: " >> ${ans}_centos_attack_vector.txt
+cat /etc/passwd >> ${ans}_centos_attack_vector.txt
+echo "Shadow: " >> ${ans}_centos_attack_vector.txt
+cat /etc/shadow >> ${ans}_centos_attack_vector.txt
+echo "Groups: " >> ${ans}_centos_attack_vector.txt
+cat /etc/group >> ${ans}_centos_attack_vector.txt
+
+
+
+
+
+
+
+
+
 echo "-------------- SUDOERS -------------" >> `echo $RESULTFILE` 2>&1
 getent group sudo | cut -d: -f4 >> `echo $RESULTFILE` 2>&1
 echo "---------- LOGGED IN USERS ---------" >> `echo $RESULTFILE` 2>&1
