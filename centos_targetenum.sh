@@ -2,6 +2,7 @@
 ## Target Enumeration Script                                              ##
 ## Bash Script for CentOS                                                 ##
 ##                                                                        ##
+## Author: Anna DeVries                                                   ##
 ## 6 April 2019                                                           ##
 ##                                                                        ##
 ## ./centos_targetenum.sh                                                 ##
