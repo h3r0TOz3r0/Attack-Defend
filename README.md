@@ -34,7 +34,9 @@ Core Team Values:
 
 To Do List:
 
-- [ ] War-Plans (list of tasks to perform)
+- [x] War-Plans (list of tasks to perform)
+
+- [ ] Firewall Script
 
 - [x] Enumeration Script
 
