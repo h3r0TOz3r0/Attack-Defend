@@ -8,6 +8,11 @@
 
 #!/usr/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then echo "Run again as root 'sudo ./centos_targetenum.sh'"
+  exit
+fi
+
 IP_ADDR=`hostname -I`
 echo "Your IP Address is "$IP_ADDR
 echo "" 
