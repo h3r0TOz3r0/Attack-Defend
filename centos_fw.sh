@@ -21,8 +21,6 @@ echo "Checking dependencies..."
 if [ ! -x "$(command -v iptables)" ]; then
 	echo "Install 'sudo yum install iptables' and try again"
 	exit 
-else
-	echo "Already downloaded iptables"
 fi
 
 echo ""
@@ -62,4 +60,4 @@ done
 /sbin/iptables -P OUTPUT DROP
 
 ## Save iptable rules to be persistent
-/usr/libexec/iptables/iptables.init save
+iptables-save > /etc/sysconfig/iptables
