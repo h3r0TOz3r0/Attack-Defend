@@ -20,7 +20,7 @@ read ans
 echo $ans
 
 echo "Target Enumeration Text File" > ${ans}_centos_attack_vector.txt
-echo " " >> ${ans}_centos.txt
+echo " " >>  ${ans}_centos_attack_vector.txt
 
 echo "--------------------System Information--------------------" >> ${ans}_centos_attack_vector.txt
 cat /etc/centos-release >> ${ans}_centos_attack_vector.txt
@@ -58,4 +58,4 @@ journalctl -xe >> ${ans}_centos_attack_vector.txt
 echo " " >> ${ans}_centos_attack_vector.txt
 
 echo "Target Enumeration Complete"
-echo "Please move this off the box and share in Slack. scp <filename> <dst@ip>:"
+echo "Please move this off the box and share in Slack. 'scp ${ans}_centos_attack_vector.txt <dst@ip>:' "
