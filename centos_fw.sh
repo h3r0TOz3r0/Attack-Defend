@@ -43,7 +43,8 @@ if [ ! -x "($arg)" ]; then
 	echo "No ports listed"
 	echo "If this is incorrect, please re-run as './fw_ops.sh port_number' "
 fi
-for arg in "$@"
+
+for arg in "$@" ####### THIS ISNT WORKING
 do
 	if [ $arg -eq "53" ]; then
 		echo "Adding UDP and TCP at Port 53"
