@@ -62,4 +62,4 @@ done
 /sbin/iptables -P OUTPUT DROP
 
 ## Save iptable rules to be persistent
-iptables-save > /etc/iptables/rules.v4
+/usr/libexec/iptables/iptables.init save
