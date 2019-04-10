@@ -2,6 +2,8 @@
 
 General Steps on a CentOS
 
+0. Drink Coffee
+
 1. Target enumeration
 
 		# Discover potential attack vectors in a system
