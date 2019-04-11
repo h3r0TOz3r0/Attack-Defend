@@ -53,20 +53,20 @@ General Steps on a CentOS
 		
 7. Setup/Secure servers
 
-	.- DNS
+	- DNS
 	
 		Make sure DNS Recursion is disabled
 		Restrict zone transfers??? (Might not be against rules of competition)
 		Configure firewall to detect and block DNS tunneling
 
-	.- Secure Email Server
+	- Secure Email Server
 
 		SMTP authentication? (Don't know if applicable to competition or what it is)
 		Encrypt ingoing/outgoing mail
 		Watch out for known metasploit exploits on popular linux email servers like zembra
 		Look at sendmail (default for centOS mail servers)
 		
-	.- Secure File Server
+	- Secure File Server
 
 		Disable anonymous use or, if anonymous use required, ensure they don't have unauthorized access
 		
@@ -75,7 +75,7 @@ General Steps on a CentOS
 		Settings found in /etc/samba/smb.conf
 		Look at potentially using stunnel https://wiki.netbsd.org/tutorials/how_to_secure_samba_with_stunnel/
 		
-	.- Securing Database Management System
+	- Securing Database Management System
 
 		Use web application firewall
 		Encrypt stored files (might not be applicable given competition)
