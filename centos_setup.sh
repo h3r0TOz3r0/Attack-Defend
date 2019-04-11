@@ -19,7 +19,7 @@ yum upgrade
 yum clean all
 
 ## Download required tools plus nano for skiddies
-yum install nano tcpdump iptables net-tools
+yum install nano tcpdump iptables net-tools traceroute
 
 ## Update Kernel
 uname -r
