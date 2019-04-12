@@ -34,7 +34,7 @@ echo "--------------------Services and Ports--------------------" &>> ${ans}_cen
 netstat -pan &>> ${ans}_centos_attack_vector.txt
 echo " " &>> ${ans}_centos_attack_vector.txt
 
-echo "--------------------User/Root Privs Information--------------------" >>&2 ${ans}_centos_attack_vector.txt
+echo "--------------------User/Root Privs Information--------------------" &>> ${ans}_centos_attack_vector.txt
 echo "Password: " &>> ${ans}_centos_attack_vector.txt
 cat /etc/passwd &>> ${ans}_centos_attack_vector.txt
 echo "Shadow: " &>> ${ans}_centos_attack_vector.txt
