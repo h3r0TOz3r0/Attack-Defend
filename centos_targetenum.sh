@@ -19,8 +19,8 @@ echo -n "Which service is this box running?: "
 read ans
 echo $ans
 
-echo "Target Enumeration Text File" >&2 ${ans}_centos_attack_vector.txt
-echo " " >>&2  ${ans}_centos_attack_vector.txt
+echo "Target Enumeration Text File" > &2 ${ans}_centos_attack_vector.txt
+echo " " >> &2  ${ans}_centos_attack_vector.txt
 
 echo "--------------------System Information--------------------" >>&2 ${ans}_centos_attack_vector.txt
 cat /etc/centos-release >> ${ans}_centos_attack_vector.txt
