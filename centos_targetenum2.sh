@@ -1,17 +1,19 @@
 ############################################################################
-## Target Enumeration Script w/o Sudo Privs                               ##
+## Target Enumeration Script                                              ##
 ## Bash Script for CentOS                                                 ##
 ##                                                                        ##
 ## Author: Anna DeVries                                                   ##
-## 12 April 2019                                                          ##
+## 6 April 2019                                                           ##
 ##                                                                        ##
-## sudo ./centos_targetenum2.sh                                           ##
-## This script is ended to no longer need sudo privs. For firewall info   ##
-## please use 'nmap <ip>' or 'nmap -p- <ip>'                              ##
-## /etc/shadow also removed; need sudo privs for this.                    ##
+## sudo ./centos_targetenum.sh                                            ##
 ############################################################################
 
 #!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+  then echo "Run again as root 'sudo ./centos_targetenum.sh'"
+  exit
+fi
 
 echo -n "Title Enumeration File: "
 read ans
@@ -43,10 +45,20 @@ echo " " &>> ${ans}_centos_attack_vector.txt
 echo "--------------------User/Root Privs Information--------------------" &>> ${ans}_centos_attack_vector.txt
 echo "Password: " &>> ${ans}_centos_attack_vector.txt
 cat /etc/passwd &>> ${ans}_centos_attack_vector.txt
+echo "Shadow: " &>> ${ans}_centos_attack_vector.txt
+cat /etc/shadow &>> ${ans}_centos_attack_vector.txt
 echo "Groups: " &>> ${ans}_centos_attack_vector.txt
 cat /etc/group &>> ${ans}_centos_attack_vector.txt
 echo "Logged in Users: " &>> ${ans}_centos_attack_vector.txt
 who &>> ${ans}_centos_attack_vector.txt
+echo " " &>> ${ans}_centos_attack_vector.txt
+
+echo "--------------------Firewall--------------------" &>> ${ans}_centos_attack_vector.txt
+echo "IPTABLES: " &>> ${ans}_centos_attack_vector.txt
+iptables -L &>> ${ans}_centos_attack_vector.txt
+echo " " &>> ${ans}_centos_attack_vector.txt
+echo "Firewalld: " &>> ${ans}_centos_attack_vector.txt
+sudo firewall-cmd --zone=public --list-all &>> ${ans}_centos_attack_vector.txt
 echo " " &>> ${ans}_centos_attack_vector.txt
 
 echo "--------------------Logs--------------------" &>> ${ans}_centos_attack_vector.txt
