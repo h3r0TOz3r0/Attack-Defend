@@ -21,7 +21,9 @@ General Steps on a CentOS
 		# sudo dhclient -v
 		# sudo ip addr add/del <static_IP> dev <ethernet_name>
 
-3. User Information
+3. Save VM Image
+
+4. User Information
 		
 		cat /etc/passwd
 		# check users/privs
@@ -30,11 +32,11 @@ General Steps on a CentOS
 		sudo userdel <usr>
 		sudo usermod -aG wheel <usr> # escalates user to "sudo" privs
 
-4. Run centos_setup.sh
+5. Run centos_setup.sh
 
 		sudo ./centos_setup.sh
 
-5. Check running services, process and open ports
+6. Check running services, process and open ports
 
 		netstat -pan 
 		systemctl list-unit-files
@@ -46,12 +48,16 @@ General Steps on a CentOS
 			# Domain Name System (DNS) server 172.16.*.6 (port 53 tcp and udp)
 			# email server 172.16.*.8 (port 25, 110, 143)
 			# database management system (DBMS) server 172.16.*.9 (port 1440) 
-		
-6. Firewall
+
+6. Save VM Image
+
+7. Firewall
 	
 		./centos_fw.sh <portnum>
 		
-7. Setup/Secure servers
+8. Save VM Image
+
+9. Setup/Secure servers
 
 	- DNS
 	
@@ -96,3 +102,6 @@ General Steps on a CentOS
 		     -Consider CGI Scripts as separate from server and another thing to examine and secure
 			i. limit allowable characters
 		Upgrade to latest version of appache
+
+
+10. Save VM Image
