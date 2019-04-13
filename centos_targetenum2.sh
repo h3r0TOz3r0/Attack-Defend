@@ -63,7 +63,8 @@ echo "Please move this off the box and share in Slack. 'scp ${ans}_centos_attack
 echo -n "Would you like to import this to your own box? (y/n): "
 read answer
 
-if [ $answer -eq "y" ]; 
+read -r -p "Would you like to import this to your own box? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
   then
   echo -n "Usr Name: "
   read ans1
