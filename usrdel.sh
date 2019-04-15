@@ -16,15 +16,13 @@ newshadow="/etc/shadow.new"
 suspend="$(which suspenduser)"
 locker="/etc/passwd.lock"
 
-if [ -z $1 ] ; then
-	echo "Usage: $0 account" >&2
-	exit 1
-elif [ "$(whoami)" != "root" ] ; then
-	echo "Error: you must be 'root' to run this command.">&2
-	exit 1
+if [ "$EUID" -ne 0 ]
+  then echo "Run again as root 'sudo ./usrdel.sh'"
+  exit
 fi
 
-$suspend $1
+
+usermod -s /sbin/nologin $1
 
 uid="$(grep -E "^${1}:" $pwfile | cut -d: -f3)"
 
