@@ -63,13 +63,13 @@ General Steps on a CentOS
 
 9. Setup/Secure servers
 
-	- DNS: port 
-
-	- Secure Email Server
-		
-	- Secure File Server
-		
-	- Securing Database Management System
+		see "services" folder
+		Areas of Responsibility
+			- DNS: z3r0
+			- Web Server: z3r0
+			- File Share Server: rainman
+			- Email Server: kl3pt0m4n1ac
+			- Database Management System Server: THarm
 
 10. Save VM Image
 
