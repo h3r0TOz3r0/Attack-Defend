@@ -39,12 +39,7 @@ echo "run 'sudo netstat -pant' or 'sudo ss -s' to see services"
 /sbin/iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	# allows output handshake traffic
 
 ## Allow Specified Ports
-if [ ! -x "($arg)" ]; then
-	echo "No ports listed"
-	echo "If this is incorrect, please re-run as './fw_ops.sh port_number' "
-fi
-
-for arg in "$@" ####### THIS ISNT WORKING
+for arg in "$@"
 do
 	if [ $arg -eq "53" ]; then
 		echo "Adding UDP and TCP at Port 53"
@@ -59,6 +54,3 @@ done
 /sbin/iptables -P INPUT DROP
 /sbin/iptables -P FORWARD DROP
 /sbin/iptables -P OUTPUT DROP
-
-## Save iptable rules to be persistent
-iptables-save > /etc/sysconfig/iptables
