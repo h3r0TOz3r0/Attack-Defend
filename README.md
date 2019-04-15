@@ -36,21 +36,21 @@ To Do List:
 
 - [x] War-Plans (list of tasks to perform)
 
-- [ ] Firewall Script
+- [x] Firewall Script
 
 - [x] Enumeration Script
 
 - [x] Set-Up Script (update box, install dependencies/tools, update kernel)
 
-- [ ] DNS Server Script
+- [ ] DNS Server
 
-- [ ] Web Server Script
+- [ ] Web Server
 
-- [ ] Fire Share Server Script
+- [ ] Fire Share Server
 
-- [ ] Email Server Script
+- [ ] Email Server
 
-- [ ] Databse Management System Server Script
+- [ ] Databse Management System Server
 
 - [ ] Flag Submitter
 
