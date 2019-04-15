@@ -13,31 +13,23 @@ pwfile="/etc/passwd"
 shadow="/etc/shadow"
 newpwfile="/etc/passwd.new"
 newshadow="/etc/shadow.new"
-suspend="$(which suspenduser)"
 locker="/etc/passwd.lock"
 
-if [ "$EUID" -ne 0 ]
-  then 
-  echo "Run again as root 'sudo ./usrdel.sh'"
-  exit
+if [ "$EUID" -ne 0 ] ; then 
+	echo "Run again as root 'sudo ./usrdel.sh'"
+	exit
 fi
 
-# Suspend the Accounts
-for arg in "$@"
-do
-	usermod -s /sbin/nologin $arg
-	count=$count+1
-done
-read "There are $count users being deleted. Is this correct? (y/n)" ans
-if [ $ans -eq "yY"
+# Suspend Account
+usermod -s /sbin/nologin $1
 
 uid="$(grep -E "^${1}:" $pwfile | cut -d: -f3)"
-
 if [ -z $uid ] ; then
 	echo "Error: no account $1 found in $pwfile" >&2
 	exit 1
 fi
 
+# Remove the user from password and shadow files
 grep -vE "^${1}:" $pwfile > $newpwfile
 grep -vE "^${1}:" $shadow > $newshadow
 
