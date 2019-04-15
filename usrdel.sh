@@ -11,8 +11,10 @@
 homedir="/home"
 pwfile="/etc/passwd"
 shadow="/etc/shadow"
+group="/etc/group"
 newpwfile="/etc/passwd.new"
 newshadow="/etc/shadow.new"
+newgroup="/etc/group.new"
 locker="/etc/passwd.lock"
 
 if [ "$EUID" -ne 0 ] ; then 
@@ -32,6 +34,7 @@ fi
 # Remove the user from password and shadow files
 grep -vE "^${1}:" $pwfile > $newpwfile
 grep -vE "^${1}:" $shadow > $newshadow
+grep -vE "^${1}:" $group > $newgroup
 
 lockcmd="$(which lockfile)"
 if [ ! -z $lockcmd ] ; then
@@ -45,9 +48,11 @@ fi
 
 mv $newpwfile $pwfile
 mv $newshadow $shadow
+mv $newgroup $group
 rm -f $locker
 
 chmod 644 $pwfile
+chmod 644 $group
 chmod 400 $shadow
 
 rm -rf $homedir/$1
