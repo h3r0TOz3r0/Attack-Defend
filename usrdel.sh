@@ -1,5 +1,12 @@
+##################################################################################
+## Delete User                                   		  		##
+## Bash Script for CentOS                           		  		##
+##                                                  		   		##
+## Author: Anna DeVries; Revised from "Wicked Cool Shell Scripts" pg 136-137	##
+## 15 April 2019                                     		   		##
+##################################################################################
+
 #!/bin/bash
-# from "Wicked Cool Shell Scripts" pg 136
 
 homedir="/home"
 pwfile="/etc/passwd"
