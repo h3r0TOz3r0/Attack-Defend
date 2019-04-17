@@ -1,38 +1,31 @@
 #!/bin/bash
 # getstats--Every 'n' minutes, grab netstats values
 
-logfile="/home/kl3pt0m4n1ac/.netstatlog"
+
+if [ ! -e /home/.netstatlog ] ; 
+then
+	touch /home/.netstatlog
+fi
+
+logfile="/home/.netstatlog"
 
 temp="/tmp/getstats.$$.tmp"
 
 trap "$(which rm) -f $temp" 0
 
-if[ ! -e $logfile ] ; then    
-   touch $logfile
-fi
-(netstat -s -p tcp > $temp
-sent="$(grep 'packets sent' $temp | cut -d\ -f1 | sed \
-'s/[^[:digit:]]//g' | head -1)"
-resent="$(grep 'retransmitted' $temp | cut -d\ -f1 | sed \
-'s/[^[:digit:]]//g' | head -1)"
-received="$(grep 'packets sent' $temp | cut -d\ -f1 | sed \
-'s/[^[:digit:]]//g')"
-dupacks="$grep 'duplicate acks' $temp | cut -d\ -f1 | \
-   sed 's/[^[:digit:]]//g'"
-outoforder="$grep 'out-of-order packets' $temp | cut -d\ -f1 | \
-   sed 's/[^[:digit:]]//g'"
-connectreq="$(grep 'connection requests' $temp | cut -d\ -f1 | \
-   sed 's/[^[:digit:]]//g')"
-connectacc="$(grep 'connection accepts' $temp | cut -d\ -f1 | \
-   sed 's/[^[:digit]]//g')"
-remount="$(grep 'retransmit timeouts' $temp | cut -d\ -f1 | \
-   sed 's[^[:digit:]]//g')"
+netstat -s -p tcp > $temp
+sent="$(grep 'packets sent' $temp | cut -d\ -f1 | sed \'s/[^[:digit:]]//g' | head -1)" &>> $logfile
+resent="$(grep 'retransmitted' $temp | cut -d\ -f1 | sed \'s/[^[:digit:]]//g' | head -1)" &>> $logfile
+received="$(grep 'packets sent' $temp | cut -d\ -f1 | sed \'s/[^[:digit:]]//g')" &>> $logfile
+dupacks="$grep 'duplicate acks' $temp | cut -d\ -f1 | \ sed's/[^[:digit:]]//g'" &>> $logfile
+outoforder="$grep 'out-of-order packets' $temp | cut -d\ -f1 | \ sed's/[^[:digit:]]//g'" &>> $logfile
+connectreq="$(grep 'connection requests' $temp | cut -d\ -f1 | \ sed's/[^[:digit:]]//g')" &>> $logfile
+connectacc="$(grep 'connection accepts' $temp | cut -d\ -f1 | \ sed's/[^[:digit]]//g')" &>> $logfile
+remount="$(grep 'retransmit timeouts' $temp | cut -d\ -f1 | \sed 's[^[:digit:]]//g')" &>> $logfile
 
-/bin/echo -n "time=$(date+%s);"
-/bin/echo -n "snt=$sent;re=$resent;rec=$received;dup=$dupacks;"
-/bin/echo -n "oo=$outoforder;creq=$connectreq;cacc=$connectacc;"
-echo "reto=$retmout"
-
-) >> $logfile
+/bin/echo -n "time=$(date+%s);" &>> $logfile
+/bin/echo -n "snt=$sent;re=$resent;rec=$received;dup=$dupacks;" &>> $logfile
+/bin/echo -n "oo=$outoforder;creq=$connectreq;cacc=$connectacc;" &>> $logfile
+echo "reto=$retmout" &>> $logfile
 
 exit 0
