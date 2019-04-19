@@ -42,16 +42,5 @@ To Do List:
 
 - [x] Set-Up Script (update box, install dependencies/tools, update kernel)
 
-- [ ] DNS Server
+- [x] Flag Submitter
 
-- [ ] Web Server
-
-- [ ] Fire Share Server
-
-- [ ] Email Server
-
-- [ ] Databse Management System Server
-
-- [ ] Flag Submitter
-
-- [ ] Offense (thrower-every three minutes, takes a vulnerability and exploits it on all boxes)
