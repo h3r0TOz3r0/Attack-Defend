@@ -1,8 +1,6 @@
 # Attack/Defend Playbook
 
     Motto: We aren't great but they're worse
-    Slogan: Turning caffeine into code
-    Goal: Beat WP Black Team
     Strategy: Send a bunch of A's until we land a shell
     
     8 Step Business/Training Model:
@@ -14,8 +12,6 @@
       6. Code?
       7. More Caffeine
       8. Profit
-
-Do not share with anyone outside our team
 
 Core Team Values:
 
