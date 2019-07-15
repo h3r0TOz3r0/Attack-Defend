@@ -1,3 +1,5 @@
+# Please see init6 Github for new material
+
 # Attack/Defend Playbook
 
     Motto: We aren't great but they're worse
